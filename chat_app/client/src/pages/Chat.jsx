@@ -24,7 +24,7 @@ const Chat = () => {
                             {userChats?.map((chat, index) => {
                                 return(
                                     <div key={index} onClick={() => updateCurrentChat(chat)}>
-                                        <UserChat chat={chat} User={user}/>
+                                        <UserChat chat={chat} user={user}/>
                                     </div>
                                 )
                             })}

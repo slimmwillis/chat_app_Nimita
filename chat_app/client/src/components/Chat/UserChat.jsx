@@ -14,9 +14,11 @@ const UserChat = ({chat, user}) => {
     const {onlineUsers, notifications, markThisUserNotificationAsRead} = useContext(ChatContext)
     const {latestMessage} = useFetchLatestMessage(chat)
     const unreadNotification = unreadNoticationsFunc(notifications)
+    
     const thisUserNotifications = unreadNotification?.filter(
-        n=>n.senderId!==recipientUser?._id
+        n=>n.senderId===recipientUser?._id
     )
+    console.log("thisUserNotifications: ", thisUserNotifications)
     const isOnline = onlineUsers?.some((user)=>user?.userId===recipientUser?._id)
     const trunketText = (text)=>{
         let shortText = text.substring(0, 20)

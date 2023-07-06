@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
     if(user){
         io.to(user.socketId).emit("getMessage", message)
         io.to(user.socketId).emit("getNotification", {
-            sendId:message.senderId, 
+            senderId:message.senderId, 
             isRead: false,
             date: new Date()
         })
